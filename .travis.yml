@@ -1,4 +1,4 @@
 dist: bionic
 language: go
 script:
-  - go run hello.go
+  - go test -v hello.go hello_test.go
