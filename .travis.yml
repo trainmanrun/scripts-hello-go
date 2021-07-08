@@ -1,4 +1,12 @@
-dist: bionic
 language: go
 script:
-  - go test -v src/hello.go src/hello_test.go
+  - go test -v src/*
+  - go build src/*
+deploy:
+  provider: releases
+  api_key: 
+    secure: Yrat7nuiZjVqJsLy7hCS6xLA+CaSB6hHBwKy21QFaf5gJ+cS13NWlkugmepPrgWUJezQEUosDjzrZYrt7C5jSrpacXqI+k3UJDVNhrzb3+uO+a4riKimszbmDUL3iDt9OLzzu0y/HgfrHPu957YQQgSJqZznRGQvFLoY4WbXXq6QrARvAdpp78gMOynoNkd2zva/Nl/GfH64OA8/V4irB577tb7dS8uLWVB8ro2QN7hifhzBv4j+CSOUBDQSR6TgDbcFTH9awiLm5IwAtgtoEvAHDlBCPmF5gPMBbP9MXgC+HmL1RADDph47mAvIjynCEWfNJidm+5H//N/V49I8TvNh/d7w8CihYy6L9+HwBXe66jpBHZ4HX2ZmSc1JgfTbJKMqQI455Uyp3/5SYWpMl8oJAELzuzcDhUFLnH8RM1zlyuUWbdk+K6+nzgQ6pVgidjWNZIhKquhRd+vd+tbzPRDAkAQ596n86Ydp2RVHUiSeUo/JSHNxz9KDnODp+ccZ6fKHIMLAqktxXfyGxEsPcO+GSoTbUSGUVdOxtF6IbjEGXR83HU9ztTxNc69Behqk35kEXcCGzy5D+sbsAmdzeMK91hDVCkOnP3ShvTPW143QIG13gyW2sDKwCUcx/uWi1vvFRRC5b6Hd6CPSoeTFwVh5EZJc6r/foAsomaWfX+k=
+  file: "hello"
+  on:
+    repo: trainmanrun/scripts-hello-go
+    tags: true
